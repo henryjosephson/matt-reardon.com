@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="32" height="32">
+  <style>
+    .mr-text {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 80px;
+      fill: #333333;
+    }
+  </style>
+  <rect width="160" height="160" fill="#f5f5f5"/>
+  <text x="80" y="102" text-anchor="middle" class="mr-text">MR</text>
+</svg>
