@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Joe Carlsmith | Matt Reardon</title>
+    <!-- Open Graph meta tags for social preview -->
+    <meta property="og:title" content="Essential Joe Carlsmith | Matt Reardon">
+    <meta property="og:description" content="A curated collection of essential readings from philosopher Joe Carlsmith">
+    <meta property="og:url" content="https://matt-reardon.com/essential-joe-carlsmith">
+    <meta property="og:image" content="/assets/og-joe-carlsmith.jpg">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        /* Base styles and reset */
+        :root {
+            --primary-color: #1567E8;
+            --primary-dark: #0D4FB3;
+            --text-color: #3B3B3B;
+            --light-text: #6A6A6A;
+            --background-color: #F8F7F7;
+            --light-gray: #F8F7F7;
+            --border-color: rgba(59, 59, 59, 0.1);
+            --card-color: #FFFFFF;
+            --accent-color: #BFD8FF;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Layout */
+        .hero {
+            position: relative;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--light-gray);
+            margin-bottom: 3rem;
+        }
+        
+        .hero-content {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            background-color: var(--accent-color);
+            z-index: 1;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        /* Essay list */
+        .essay-list {
+            list-style-position: inside;
+            margin: 2rem 0;
+        }
+        
+        .essay-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .essay-list a {
+            margin-left: 0.5rem;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .essay-list a:hover {
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: background-color 0.2s ease;
+        }
+        
+        .back-button:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 6rem 0 3rem;
+            }
+            
+            .hero-content {
+                padding: 0 2rem;
+            }
+            
+            .hero-bg {
+                width: 100%;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">MR</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Essential Joe Carlsmith</h1>
+            <p class="fade-in delay-1">A curated collection of essays best listened to on <a href="https://joecarlsmithaudio.buzzsprout.com/">Joe Carlsmith Audio</a></p>
+        </div>
+    </section>
+
+    <section class="container section">
+        <div class="fade-in delay-2">
+            <ol class="essay-list">
+                <li><a href="https://joecarlsmith.com/2020/12/06/thoughts-on-being-mortal">Thoughts on Being Mortal</a></li>
+                <li><a href="https://joecarlsmith.com/2021/01/24/on-clinging">On Clinging</a></li>
+                <li><a href="https://joecarlsmith.com/2021/02/07/killing-the-ants">Killing the Ants</a></li>
+                <li><a href="https://joecarlsmith.com/2021/03/22/on-future-people-looking-back-at-21st-century-longtermism">On Future People Looking back at 21st Century Longtermism</a></li>
+                <li><a href="https://joecarlsmith.com/2021/03/14/against-neutrality-about-creating-happy-lives">Against Neutrality about Creating Happy Lives</a></li>
+                <li><a href="https://joecarlsmith.com/2022/12/23/on-sincerity">On Sincerity</a></li>
+                <li><a href="https://joecarlsmith.com/2023/02/16/why-should-ethical-anti-realists-do-ethics">Why Should Ethical Anti-Realists Do Ethics?</a></li>
+                <li><a href="https://joecarlsmith.substack.com/p/seeing-more-whole">Seeing more Whole</a></li>
+                <li><a href="https://joecarlsmith.com/2021/04/19/problems-of-evil">Problems of Evil</a></li>
+                <li><a href="https://joecarlsmith.com/2021/06/21/on-the-limits-of-idealized-values">On the Limits of Idealized Values</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/02/gentleness-and-the-artificial-other">Gentleness and the Artificial Other</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/04/deep-atheism-and-ai-risk">Deep Atheism and AI Risk</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/08/when-yang-goes-wrong">When Yang Goes Wrong</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/09/does-ai-risk-other-the-ais">Does AI risk "Other" the AIs?</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/11/an-even-deeper-atheism">An Even Deeper Atheism</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/16/being-nicer-than-clippy">Being Nicer than Clippy</a></li>
+                <li><a href="https://joecarlsmith.com/2024/01/18/on-the-abolition-of-man">On the Abolition of Man</a></li>
+                <li><a href="https://joecarlsmith.com/2024/03/21/on-green">On Green</a></li>
+                <li><a href="https://joecarlsmith.com/2024/03/25/on-attunement">On Attunement</a></li>
+                <li><a href="https://joecarlsmith.com/2024/06/18/loving-a-world-you-dont-trust">Loving a World You Don't Trust</a></li>
+            </ol>
+            
+            <a href="/" class="back-button">Back to home</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Matt Reardon</p>
+        </div>
+    </footer>
+    
+    <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
